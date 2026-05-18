@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Confidential Offering — Urban Fund</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "secondary-container": "#fed488", "on-primary": "#ffffff",
+        "surface-container-low": "#f3f4f5", "on-tertiary-container": "#798499",
+        "on-surface": "#191c1d", "surface-variant": "#e1e3e4",
+        "secondary": "#775a19", "surface-container-lowest": "#ffffff",
+        "background": "#f8f9fa", "surface-container": "#edeeef",
+        "surface-container-highest": "#e1e3e4", "on-secondary": "#ffffff",
+        "on-surface-variant": "#44474a", "primary-fixed": "#e2e2e5",
+        "surface-dim": "#d9dadb", "secondary-fixed-dim": "#e9c176",
+        "outline-variant": "#c5c6ca", "on-primary-container": "#838486",
+        "outline": "#75777a", "secondary-fixed": "#ffdea5",
+        "primary": "#000101", "primary-container": "#1a1c1e",
+        "surface": "#f8f9fa", "on-background": "#191c1d"
+      },
+      spacing: {
+        "margin-mobile": "20px", "unit": "8px", "section-gap": "120px",
+        "margin-desktop": "64px", "gutter": "24px", "container-max": "1440px"
+      },
+      fontFamily: {
+        "display-lg": ["DM Serif Display"], "display-lg-mobile": ["DM Serif Display"],
+        "headline-lg": ["DM Serif Display"], "headline-sm": ["DM Serif Display"],
+        "body-lg": ["DM Sans"], "body-md": ["DM Sans"],
+        "label-caps": ["Inter"], "technical-data": ["Inter"]
+      },
+      fontSize: {
+        "display-lg": ["64px", {lineHeight:"1.1", letterSpacing:"-0.01em", fontWeight:"400"}],
+        "display-lg-mobile": ["44px", {lineHeight:"1.1", letterSpacing:"-0.01em", fontWeight:"400"}],
+        "headline-lg": ["32px", {lineHeight:"1.3", fontWeight:"400"}],
+        "headline-sm": ["24px", {lineHeight:"1.4", fontWeight:"400"}],
+        "body-lg": ["18px", {lineHeight:"1.6", fontWeight:"400"}],
+        "body-md": ["16px", {lineHeight:"1.6", fontWeight:"400"}],
+        "label-caps": ["12px", {lineHeight:"1.5", letterSpacing:"0.1em", fontWeight:"600"}],
+        "technical-data": ["14px", {lineHeight:"1.4", fontWeight:"500"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .hairline-divider { height: 1px; background-color: #4a5568; opacity: 0.2; }
+  .architectural-overlay {
+    background-image: linear-gradient(to right, #4a5568 1px, transparent 1px),
+                      linear-gradient(to bottom, #4a5568 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.03;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen">
+
+<!-- Primary Canvas -->
+<main class="flex-grow flex items-center justify-center relative overflow-hidden px-5 md:px-0">
+  <div class="absolute inset-0 architectural-overlay pointer-events-none"></div>
+  <div class="max-w-[800px] w-full text-center relative z-10 py-[120px]">
+
+    <!-- Branding -->
+    <div class="mb-12">
+      <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; color: #44474a; text-transform: uppercase;">URBAN FUND</span>
+      <div class="hairline-divider w-12 mx-auto mt-4"></div>
+    </div>
+
+    <!-- Title -->
+    <header class="mb-12">
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg uppercase text-primary mb-6">
+        CONFIDENTIAL OFFERING
+      </h1>
+      <p style="font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.15em; color: #44474a; text-transform: uppercase;">
+        2033 Minor Avenue East, Seattle, Washington 98102
+      </p>
+    </header>
+
+    <!-- Property Image -->
+    <div class="w-full h-[240px] md:h-[320px] mb-12 relative grayscale opacity-60">
+      <img
+        alt="Minimalist modern high-rise architecture"
+        class="w-full h-full object-cover border border-outline-variant"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG0Ln1ZLxA3gH3-Sg5_wNObpv6RfniqZEqYO7kxoR8edgaOG9_KRHANulFcyQuWzM2qbIRnzrBGiAT1eckzOMKeFyqG_Y75vWuKFmC9_qaxN2SR09GUh5ecBfagLpuoloLuqzpIxknB77u8Di5XwgudisEb4E-boQYrtg2oghsWdwAUp_WdA8-YTpX3l_khS-jtrm0d0s7fQwHfrbwKgPFqHT3-2-hP0ISdMmPWMW1aohlcqznx3KMPaKAkd4IzvrnXDlO6npjnA1oA"
+      >
+      <div class="absolute inset-0 border border-white/20 pointer-events-none"></div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="max-w-[640px] mx-auto mb-12">
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        This offering is available to a select group of qualified developers. The materials contained within are confidential and intended solely for the purpose of evaluating a potential acquisition. By proceeding, you agree to treat all information as confidential, to restrict disclosure to parties directly involved in evaluating this transaction, and not to contact existing tenants or visit the property without prior authorization from the seller.
+      </p>
+    </div>
+
+    <!-- Occupancy Note -->
+    <div class="mb-12 py-4 inline-block px-12" style="border-top: 1px solid #c5c6ca; border-bottom: 1px solid #c5c6ca;">
+      <p style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #000101; text-transform: uppercase;">
+        Note: The property is fully occupied and actively operating.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex flex-col items-center">
+      <a href="overview.html"
+        style="display: inline-block; background-color: #000101; color: #ffffff; border: none; padding: 20px 48px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background-color 0.3s;"
+        onmouseover="this.style.backgroundColor='#44474a'"
+        onmouseout="this.style.backgroundColor='#000101'"
+      >
+        Proceed to Offering
+      </a>
+      <div class="mt-8 flex items-center gap-2 text-on-surface-variant">
+        <span class="material-symbols-outlined" style="font-size: 18px;">lock</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Secure Access Protocol</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Contact Section -->
+<section style="border-top: 1px solid #c5c6ca; background: rgba(255,255,255,0.5); padding: 48px 0;">
+  <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+    <h2 style="font-family: Inter, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; color: #75777a; text-transform: uppercase; text-align: center; margin-bottom: 32px;">Inquiries &amp; Information</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #75777a; text-transform: uppercase;">Seller</p>
+        <h3 style="font-family: 'DM Serif Display', serif; font-size: 20px; color: #000101; line-height: 1.2; margin: 0;">Peter Erickson</h3>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: #44474a; display: flex; align-items: center; gap: 8px; margin: 0;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">mail</span>peter@peter-erickson.com
+          </p>
+          <p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: #44474a; display: flex; align-items: center; gap: 8px; margin: 0;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">smartphone</span>206-850-5729
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; text-align: right;">
+        <p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #75777a; text-transform: uppercase;">Broker</p>
+        <h3 style="font-family: 'DM Serif Display', serif; font-size: 20px; color: #000101; line-height: 1.2; margin: 0;">Alexander Erickson</h3>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: #44474a; display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin: 0;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">mail</span>bertschi25@gmail.com
+          </p>
+          <p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: #44474a; display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin: 0;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">smartphone</span>206-779-2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: #f3f4f5; border-top: 1px solid #c5c6ca;">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 24px 64px; max-width: 1440px; margin: 0 auto;">
+    <div class="md:flex-row md:justify-between w-full flex flex-col items-center gap-4">
+      <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #000101; text-transform: uppercase;">URBAN FUND</span>
+      <div style="display: flex; gap: 24px;">
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Sustainability</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Reporting</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Privacy</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Disclaimer</a>
+      </div>
+      <span style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #44474a; opacity: 0.6;">© 2026 URBAN FUND ALL RIGHTS RESERVED.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Executive Overview — Urban Fund</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "secondary-container": "#fed488", "on-primary": "#ffffff",
+        "surface-container-low": "#f3f4f5", "on-tertiary-container": "#798499",
+        "on-surface": "#191c1d", "surface-variant": "#e1e3e4",
+        "secondary": "#775a19", "surface-container-lowest": "#ffffff",
+        "background": "#f8f9fa", "surface-container": "#edeeef",
+        "surface-container-highest": "#e1e3e4", "on-secondary": "#ffffff",
+        "on-surface-variant": "#44474a", "primary-fixed": "#e2e2e5",
+        "surface-dim": "#d9dadb", "secondary-fixed-dim": "#e9c176",
+        "outline-variant": "#c5c6ca", "on-primary-container": "#838486",
+        "outline": "#75777a", "secondary-fixed": "#ffdea5",
+        "primary": "#000101", "primary-container": "#1a1c1e",
+        "surface": "#f8f9fa", "on-background": "#191c1d"
+      },
+      spacing: {
+        "margin-mobile": "20px", "unit": "8px", "section-gap": "120px",
+        "margin-desktop": "64px", "gutter": "24px", "container-max": "1440px"
+      },
+      fontFamily: {
+        "display-lg": ["DM Serif Display"], "display-lg-mobile": ["DM Serif Display"],
+        "headline-lg": ["DM Serif Display"], "headline-sm": ["DM Serif Display"],
+        "body-lg": ["DM Sans"], "body-md": ["DM Sans"],
+        "label-caps": ["Inter"], "technical-data": ["Inter"]
+      },
+      fontSize: {
+        "display-lg": ["64px", {lineHeight:"1.1", letterSpacing:"-0.01em", fontWeight:"400"}],
+        "display-lg-mobile": ["44px", {lineHeight:"1.1", letterSpacing:"-0.01em", fontWeight:"400"}],
+        "headline-lg": ["32px", {lineHeight:"1.3", fontWeight:"400"}],
+        "headline-sm": ["24px", {lineHeight:"1.4", fontWeight:"400"}],
+        "body-lg": ["18px", {lineHeight:"1.6", fontWeight:"400"}],
+        "body-md": ["16px", {lineHeight:"1.6", fontWeight:"400"}],
+        "label-caps": ["12px", {lineHeight:"1.5", letterSpacing:"0.1em", fontWeight:"600"}],
+        "technical-data": ["14px", {lineHeight:"1.4", fontWeight:"500"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- Nav -->
+<header style="background: #f8f9fa; position: fixed; top: 0; left: 0; right: 0; z-index: 50; border-bottom: 1px solid #c5c6ca;">
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 64px; height: 80px; max-width: 1440px; margin: 0 auto;">
+    <div style="font-family: 'DM Serif Display', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; color: #000101;">URBAN FUND</div>
+    <nav style="display: flex; gap: 32px;">
+      <a href="overview.html" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #000101; text-decoration: none; border-bottom: 2px solid #000101; padding-bottom: 4px;">Overview</a>
+      <a href="context.html" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none;">Context</a>
+      <a href="vision.html" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none;">Vision</a>
+      <a href="acquisition.html" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none;">Acquisition</a>
+    </nav>
+    <a href="acquisition.html"
+      style="background-color: #000101; color: #ffffff; padding: 12px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;"
+      onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+      Contact Firm
+    </a>
+  </div>
+</header>
+
+<main style="margin-top: 80px;">
+
+  <!-- Hero -->
+  <section style="position: relative; width: 100%; height: 870px; overflow: hidden; background: #1a1c1e;">
+    <img alt="Architectural rendering of the modern multi-family building"
+      style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVEoTPU91wJPIt5ybIXoSb9k9mJp6hYzObKskc1QcepxD6TkzqOjZKGj3XyZfn02j5lHfgjvlrZI95EF6lDxlWeS7abjsZRNcJ55rn8hxi8PY3hibGFMIPFPk8lDCj1ILL684VRe2_8hezBCcYq2WUzuGISGcJPBAB2QNhttbuY-F75EUG34YgzsxgR1VkBXwIG0jvm6e7x11RrPD_vqdeFnqH0bvl9kR3cIWC6C5xBLlhyFPROxr0EeT4egQK49hUrbwUIFzNN1c3jQ">
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 0 64px 96px; max-width: 1440px; margin: 0 auto; width: 100%;">
+      <div style="max-width: 700px; padding: 40px; backdrop-filter: blur(4px); border-left: 4px solid #000101; background: rgba(248,249,250,0.75);">
+        <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; color: #44474a; text-transform: uppercase; display: block; margin-bottom: 16px;">New Development Opportunity</span>
+        <h1 style="font-family: 'DM Serif Display', serif; font-size: 64px; line-height: 1.1; color: #000101; margin: 0 0 24px;">Eastlake Infill Development Offering</h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 18px; line-height: 1.6; color: #44474a; margin: 0;">2033 Minor Avenue East, Seattle, Washington 98102<br>Sixteen units. One remaining site. Decades of family stewardship behind it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Overview Intro -->
+  <section style="padding: 120px 64px; max-width: 1440px; margin: 0 auto;">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div class="md:col-span-4" style="border-top: 1px solid #c5c6ca; padding-top: 32px;">
+        <h2 style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; color: #000101; text-transform: uppercase;">The Brief</h2>
+        <p style="font-family: 'DM Serif Display', serif; font-size: 32px; line-height: 1.3; margin: 16px 0; color: #000101;">Position, Plans, and a Path to Permit</p>
+        <p style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #000101; text-transform: uppercase; margin-top: 16px;">No development conditions. No floodplain. No shoreline overlay. Urban Growth Area confirmed. The site is ready to build.</p>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 18px; line-height: 1.6; color: #191c1d; margin: 0;">2033 Minor Avenue East represents one of the last undeveloped multifamily parcels on this block of Eastlake — a neighborhood positioned directly between South Lake Union and the University District, two of Seattle's largest employment anchors.</p>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #44474a; margin: 0;">The property is offered with a substantially complete development package, including architectural and engineering plans, landscape planning, and preliminary permitting documentation prepared through Surround Architecture. Two development schemes are under consideration: a four-story, 16-unit apartment building and a five-story, 16-unit condominium project with below-grade parking. The seller invites highest and best unconditional offers from qualified developers on or before July 1, 2026.</p>
+          <!-- Quick Stats -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 48px; border-top: 1px solid #c5c6ca;">
+            <div>
+              <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; display: block;">Total Area</span>
+              <span style="font-family: Inter, sans-serif; font-size: 24px; font-weight: 500; color: #000101;">7,449 SQFT</span>
+            </div>
+            <div>
+              <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; display: block;">Residences</span>
+              <span style="font-family: Inter, sans-serif; font-size: 24px; font-weight: 500; color: #000101;">16 UNITS</span>
+            </div>
+            <div>
+              <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; display: block;">Offer Deadline</span>
+              <span style="font-family: Inter, sans-serif; font-size: 24px; font-weight: 500; color: #000101;">JULY 1, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid -->
+  <section style="padding: 0 64px 120px; max-width: 1440px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; height: 600px;">
+      <!-- Main Image -->
+      <div style="position: relative; overflow: hidden; border: 1px solid #c5c6ca;">
+        <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s;"
+          onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxeahaD24c1WPpKJK1S3xqvcAGOvld_MCwcjxs8_h2iZUJz9nNfa8-8BAA2gtvSK9K94Q7QNFQqUN_1u-bbJ00UJGjru-kFBwmUyZVkjtc50ACrK4yGI22hUf9oad7Yn4yUFyOfAaohAxT_fUQZmS3TPiZ613W8q95zEcOfkQ5pHnpBkQ9LIc0Ire9Bhzb9IC8PVSOFKm8fYVdJlJMs96TBXesZyGYtlLTBfRxXNQrEpSL3nQVxKaftU-oHXOWSfIxmnIgsYIHT94hxQ"
+          alt="Architectural illustration">
+      </div>
+      <!-- Right Stack -->
+      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
+        <div style="background: #f3f4f5; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #c5c6ca;">
+          <span class="material-symbols-outlined" style="font-size: 36px; color: #000101;">architecture</span>
+          <div>
+            <h3 style="font-family: 'DM Serif Display', serif; font-size: 24px; color: #000101; margin: 0 0 8px;"><strong>Substantially Advanced</strong></h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #44474a; margin: 0;">Architectural, engineering, and landscape plans in place. Preliminary permitting and SDCI agency review completed.</p>
+          </div>
+        </div>
+        <div style="background: #000101; padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span class="material-symbols-outlined" style="font-size: 36px; color: #ffffff;">location_on</span>
+          <div>
+            <h3 style="font-family: 'DM Serif Display', serif; font-size: 24px; color: #ffffff; margin: 0 0 8px;"><strong>Flexible Development Path</strong></h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.7); margin: 0;">Two schemes available — apartment or condominium — offering optionality on program, financing structure, and exit strategy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer style="background-color: #f3f4f5; border-top: 1px solid #c5c6ca;">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 24px 64px; max-width: 1440px; margin: 0 auto;">
+    <div class="md:flex-row md:justify-between w-full flex flex-col items-center gap-4">
+      <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #000101; text-transform: uppercase;">URBAN FUND</span>
+      <div style="display: flex; gap: 24px;">
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Sustainability</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Reporting</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Privacy</a>
+        <a href="#" style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-transform: uppercase; text-decoration: none;">Disclaimer</a>
+      </div>
+      <span style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #44474a; opacity: 0.6;">© 2026 URBAN FUND, ALL RIGHTS RESERVED.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
