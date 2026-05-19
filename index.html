@@ -19,6 +19,9 @@
     background-size: 40px 40px;
     opacity: 0.03;
   }
+  .property-img-wrap { width: 100%; height: 320px; margin-bottom: 48px; filter: grayscale(1); opacity: 0.6; transition: filter 0.5s, opacity 0.5s; cursor: pointer; }
+  .property-img-wrap:hover, .property-img-wrap:active { filter: grayscale(0); opacity: 1; }
+  @media (max-width: 768px) { .property-img-wrap { height: 200px; } }
 
   /* MAIN */
   .main-inner { max-width: 800px; width: 100%; text-align: center; position: relative; z-index: 10; padding: 120px 20px; margin: 0 auto; }
@@ -87,14 +90,14 @@
       </p>
     </header>
 
-    <!-- Property Image — static grayscale, no hover needed -->
-    <div class="property-img" style="width: 100%; height: 320px; margin-bottom: 48px; position: relative; filter: grayscale(1); opacity: 0.6;">
-      <img
-        alt="Minimalist modern high-rise architecture"
-        style="width: 100%; height: 100%; object-fit: cover; border: 1px solid #c5c6ca; display: block;"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG0Ln1ZLxA3gH3-Sg5_wNObpv6RfniqZEqYO7kxoR8edgaOG9_KRHANulFcyQuWzM2qbIRnzrBGiAT1eckzOMKeFyqG_Y75vWuKFmC9_qaxN2SR09GUh5ecBfagLpuoloLuqzpIxknB77u8Di5XwgudisEb4E-boQYrtg2oghsWdwAUp_WdA8-YTpX3l_khS-jtrm0d0s7fQwHfrbwKgPFqHT3-2-hP0ISdMmPWMW1aohlcqznx3KMPaKAkd4IzvrnXDlO6npjnA1oA"
-      >
-    </div>
+    <!-- Property Image — with hover -->
+    <div class="property-img-wrap">
+  <img
+    alt="Minimalist modern high-rise architecture"
+    style="width: 100%; height: 100%; object-fit: cover; border: 1px solid #c5c6ca; display: block;"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG0Ln1ZLxA3gH3-Sg5_wNObpv6RfniqZEqYO7kxoR8edgaOG9_KRHANulFcyQuWzM2qbIRnzrBGiAT1eckzOMKeFyqG_Y75vWuKFmC9_qaxN2SR09GUh5ecBfagLpuoloLuqzpIxknB77u8Di5XwgudisEb4E-boQYrtg2oghsWdwAUp_WdA8-YTpX3l_khS-jtrm0d0s7fQwHfrbwKgPFqHT3-2-hP0ISdMmPWMW1aohlcqznx3KMPaKAkd4IzvrnXDlO6npjnA1oA"
+  >
+</div>
 
     <!-- Disclaimer -->
     <div style="max-width: 640px; margin: 0 auto 48px;">
