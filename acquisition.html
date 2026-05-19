@@ -242,37 +242,43 @@
           </div>
         </div>
 
-        <form
-          action="https://formspree.io/f/mojbvwek"
-          method="POST"
-          style="display: flex; flex-direction: column; gap: 16px;"
-        >
-          <!-- Redirect to Google Drive on success -->
-          <input type="hidden" name="_next" value="https://drive.google.com/drive/folders/1RMV3zhuLB22-ftHJ3xXBBut914qF2ztp?usp=sharing">
-          <!-- Formspree subject line -->
-          <input type="hidden" name="_subject" value="Urban Fund — Asset Download Request">
+        <form id="asset-form" style="display: flex; flex-direction: column; gap: 16px;">
+  <input type="hidden" name="_subject" value="Urban Fund — Asset Download Request">
 
-          <div class="form-field">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
-          </div>
+  <div class="form-field">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+  </div>
 
-          <div class="form-field">
-            <label for="firm">Firm / Organization</label>
-            <input type="text" id="firm" name="firm" placeholder="Your firm">
-          </div>
+  <div class="form-field">
+    <label for="firm">Firm / Organization</label>
+    <input type="text" id="firm" name="firm" placeholder="Your firm">
+  </div>
 
-          <div class="form-field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
+  <div class="form-field">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+  </div>
 
-          <button type="submit" class="form-submit">
-            Download All Assets
-            <span class="material-symbols-outlined" style="font-size: 18px; color: #000101;">download</span>
-          </button>
+  <button type="submit" class="form-submit">
+    Download All Assets
+    <span class="material-symbols-outlined" style="font-size: 18px; color: #000101;">download</span>
+  </button>
+</form>
 
-        </form>
+<script>
+document.getElementById('asset-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  await fetch('https://formspree.io/f/mojbvwek', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  window.location.href = 'https://drive.google.com/drive/folders/1RMV3zhuLB22-ftHJ3xXBBut914qF2ztp?usp=sharing';
+});
+</script>
       </div>
 
     </div>
