@@ -12,94 +12,111 @@
   .label { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
   .tech-data { font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; line-height: 1.4; }
   .serif { font-family: 'DM Serif Display', serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+
+  /* NAV */
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 0 64px; height: 80px; max-width: 1440px; margin: 0 auto; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-link { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none; }
   .nav-link.active { color: #000101; border-bottom: 2px solid #000101; padding-bottom: 4px; }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  .hairline-b { border-bottom: 1px solid #E2E8F0; }
-  .table-row { border-bottom: 1px solid #E2E8F0; transition: background 0.15s; }
+  .nav-cta { background: #000101; color: #ffffff; padding: 12px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+
+  /* LAYOUT */
+  .main-pad { max-width: 1440px; margin: 0 auto; padding: 120px 64px; }
+
+  /* HERO */
+  .hero-grid { display: grid; grid-template-columns: 8fr 4fr; gap: 24px; }
+
+  /* DOCUMENT TABLE */
+  .doc-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .doc-table { width: 100%; text-align: left; border-collapse: collapse; }
+  .table-row { border-bottom: 1px solid #E2E8F0; transition: background 0.15s; cursor: pointer; }
   .table-row:hover { background: #edeeef; }
 
-  /* Form styles */
-  .form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .form-field label {
-    font-family: Inter, sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-  }
-  .form-field input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    color: #ffffff;
-    font-family: Inter, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 8px 0;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-  }
-  .form-field input::placeholder {
-    color: rgba(255,255,255,0.3);
-  }
-  .form-field input:focus {
-    border-bottom-color: rgba(255,255,255,0.9);
-  }
-  .form-submit {
-    background: #ffffff;
-    color: #000101;
-    border: none;
-    padding: 14px 24px;
-    font-family: Inter, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 100%;
-    transition: opacity 0.2s;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  /* CONTACT GRID */
+  .contact-grid { display: grid; grid-template-columns: 4fr 4fr 4fr; gap: 24px; align-items: stretch; }
+  .contact-card { padding: 24px; border: 1px solid #E2E8F0; background: white; display: flex; flex-direction: column; justify-content: center; min-height: 160px; }
+
+  /* FORM */
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field label { font-family: Inter, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .form-field input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-family: Inter, sans-serif; font-size: 14px; padding: 8px 0; outline: none; transition: border-color 0.2s; width: 100%; }
+  .form-field input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-field input:focus { border-bottom-color: rgba(255,255,255,0.9); }
+  .form-submit { background: #ffffff; color: #000101; border: none; padding: 14px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; width: 100%; transition: opacity 0.2s; margin-top: 8px; display: flex; align-items: center; justify-content: space-between; }
   .form-submit:hover { opacity: 0.85; }
+
+  /* FOOTER */
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 24px 64px; max-width: 1440px; margin: 0 auto; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* ════════════════════════════
+     MOBILE
+  ════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* Nav */
+    .nav-inner { padding: 0 20px; height: auto; flex-wrap: wrap; }
+    .nav-logo { font-size: 18px !important; padding: 16px 0 8px; }
+    .nav-links { gap: 16px; padding-bottom: 12px; order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 11px !important; white-space: nowrap; }
+    .nav-cta { display: none; }
+
+    /* Layout */
+    .main-pad { padding: 48px 20px; }
+
+    /* Hero */
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 36px !important; }
+    .hero-meta { display: none; }
+
+    /* Feature image */
+    .feature-card-body { padding: 16px !important; }
+
+    /* Document table */
+    .doc-table { min-width: 560px; }
+    .doc-table-header { flex-direction: column; align-items: flex-start !important; gap: 8px; margin-bottom: 20px; }
+
+    /* Contact grid — stack all three */
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-card { min-height: auto !important; }
+
+    /* Form card */
+    .form-card { padding: 24px !important; }
+
+    /* Footer */
+    .footer-inner { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    .footer-links { gap: 16px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- Nav -->
 <header style="background: #f8f9fa; border-bottom: 1px solid #c5c6ca; position: sticky; top: 0; z-index: 50;">
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 64px; height: 80px; max-width: 1440px; margin: 0 auto;">
-    <div class="serif" style="font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; color: #000101;">URBAN FUND</div>
-    <nav style="display: flex; gap: 32px; align-items: center;">
+  <div class="nav-inner">
+    <div class="nav-logo serif" style="font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; color: #000101;">URBAN FUND</div>
+    <nav class="nav-links">
       <a href="overview.html" class="nav-link">Overview</a>
       <a href="context.html" class="nav-link">Context</a>
       <a href="vision.html" class="nav-link">Vision</a>
       <a href="acquisition.html" class="nav-link active">Acquisition</a>
     </nav>
-    <a href="#access-assets" style="background: #000101; color: #ffffff; padding: 12px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Access Assets</a>
+    <a href="#access-assets" class="nav-cta">Access Assets</a>
   </div>
 </header>
 
-<main style="max-width: 1440px; margin: 0 auto; padding: 120px 64px;">
+<main class="main-pad">
 
   <!-- Hero -->
   <section style="margin-bottom: 120px;">
-    <div style="display: grid; grid-template-columns: 8fr 4fr; gap: 24px;">
+    <div class="hero-grid">
       <div>
-        <h1 class="serif" style="font-size: 64px; line-height: 1.1; color: #000101; margin: 0 0 24px;">Acquisition &amp; Due Diligence</h1>
+        <h1 class="hero-title serif" style="font-size: 64px; line-height: 1.1; color: #000101; margin: 0 0 24px;">Acquisition &amp; Due Diligence</h1>
         <p style="font-size: 18px; line-height: 1.6; color: #44474a; max-width: 680px; margin: 0;">Seven years of pre-development work: The documentation supporting this offering is complete. Plans, reports, surveys, and permitting correspondence are available to qualified parties upon review.</p>
       </div>
-      <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; padding-bottom: 16px;">
-        <span class="label" style="color: #75777a; margin-bottom: 8px;">LAST UPDATED</span>
+      <div class="hero-meta" style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; padding-bottom: 16px;">
+        <span class="label" style="color: #75777a; margin-bottom: 8px;">Last Updated</span>
         <span class="tech-data" style="font-weight: 700;">OCTOBER 24, 2024</span>
       </div>
     </div>
@@ -115,7 +132,7 @@
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-j7kujapi5rFY6sYbZfCSr3ZFn3sEfmTL4kUheqCC8jpuAVGvK2CFrQQUxVb0YuZIW6jtrQOqZ1z3tCempxD3RmeC-whFY6EjvrXTYOzQaFMST8P3hQpIfMuiYZLAujKjThXFq5vFHZ122_bkjxBgewbT8Ltc9uHbj-TsnlHps38IIApbicr9KuI9A7qTXWITMP2PlQk1N97Dd5z_oG9USsSEtmdSfrEM2pVbheEsr59wexzZpPNEFEPHEaC-bh-qvcLcniiBOV0"
           alt="Architectural blueprint">
       </div>
-      <div style="padding: 24px;">
+      <div class="feature-card-body" style="padding: 24px;">
         <h2 class="serif" style="font-size: 24px; margin: 0 0 16px;">Architectural &amp; Engineering</h2>
         <p style="font-size: 16px; line-height: 1.6; color: #44474a; margin: 0 0 24px;">Complete structural schematics, MEP engineering plans, and interior architectural specifications.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -129,14 +146,14 @@
 
   <!-- Document Table -->
   <section style="margin-bottom: 120px;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px;">
+    <div class="doc-table-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px;">
       <h2 class="serif" style="font-size: 32px; margin: 0;">Document Index &amp; Reports</h2>
-      <div class="label" style="color: #75777a;">SHOWING 3 CATEGORIZED FILES</div>
+      <div class="label" style="color: #75777a;">Showing 3 Categorized Files</div>
     </div>
-    <div style="overflow-x: auto;">
-      <table style="width: 100%; text-align: left; border-collapse: collapse;">
+    <div class="doc-table-wrap">
+      <table class="doc-table">
         <thead>
-          <tr class="hairline-b">
+          <tr style="border-bottom: 1px solid #E2E8F0;">
             <th class="label" style="padding: 16px 0; color: #75777a; width: 50%;">Document Title</th>
             <th class="label" style="padding: 16px 0; color: #75777a;">Type</th>
             <th class="label" style="padding: 16px 0; color: #75777a;">Year</th>
@@ -200,12 +217,12 @@
   <!-- Contact + Asset Access -->
   <section id="access-assets">
     <h2 class="serif" style="font-size: 32px; margin: 0 0 16px;">Seller Contact Information</h2>
-    <p style="font-size: 16px; line-height: 1.6; color: #44474a; max-width: 680px; margin: 0 0 48px;">Please direct all communications, questions, requests for materials, and offers to the following. To access the complete due diligence package, submit your details below.</p>
+    <p style="font-size: 16px; line-height: 1.6; color: #44474a; max-width: 680px; margin: 0 0 40px;">Please direct all communications, questions, requests for materials, and offers to the following. To access the complete due diligence package, submit your details below.</p>
 
-    <div style="display: grid; grid-template-columns: 4fr 4fr 4fr; gap: 24px; align-items: stretch;">
+    <div class="contact-grid">
 
       <!-- Seller -->
-      <div style="padding: 24px; border: 1px solid #E2E8F0; background: white; display: flex; flex-direction: column; justify-content: center; min-height: 160px;">
+      <div class="contact-card">
         <p class="label" style="color: #75777a; margin: 0 0 8px;">Seller</p>
         <h3 class="serif" style="font-size: 20px; color: #000101; margin: 0 0 12px;">Peter Erickson</h3>
         <div style="display: flex; flex-direction: column; gap: 6px;">
@@ -219,7 +236,7 @@
       </div>
 
       <!-- Broker -->
-      <div style="padding: 24px; border: 1px solid #E2E8F0; background: white; display: flex; flex-direction: column; justify-content: center; min-height: 160px;">
+      <div class="contact-card">
         <p class="label" style="color: #75777a; margin: 0 0 8px;">Broker</p>
         <h3 class="serif" style="font-size: 20px; color: #000101; margin: 0 0 12px;">Alexander Erickson</h3>
         <div style="display: flex; flex-direction: column; gap: 6px;">
@@ -233,7 +250,7 @@
       </div>
 
       <!-- Download Form -->
-      <div style="background: #000101; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; min-height: 160px;">
+      <div class="form-card" style="background: #000101; padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
           <span class="material-symbols-outlined" style="color: #ffffff; font-size: 20px;">cloud_download</span>
           <div>
@@ -243,28 +260,43 @@
         </div>
 
         <form id="asset-form" style="display: flex; flex-direction: column; gap: 16px;">
-  <input type="hidden" name="_subject" value="Urban Fund — Asset Download Request">
+          <div class="form-field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="firm">Firm / Organization</label>
+            <input type="text" id="firm" name="firm" placeholder="Your firm">
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <button type="submit" class="form-submit">
+            Download All Assets
+            <span class="material-symbols-outlined" style="font-size: 18px; color: #000101;">download</span>
+          </button>
+        </form>
+      </div>
 
-  <div class="form-field">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Your name" required>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer style="background-color: #f3f4f5; border-top: 1px solid #c5c6ca; margin-top: 120px;">
+  <div class="footer-inner">
+    <span class="label" style="color: #000101; font-weight: 700;">URBAN FUND</span>
+    <div class="footer-links">
+      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Sustainability</a>
+      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Reporting</a>
+      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Privacy</a>
+      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Disclaimer</a>
+    </div>
+    <span style="font-size: 14px; color: #44474a; opacity: 0.6;">© 2026 URBAN FUND, ALL RIGHTS RESERVED.</span>
   </div>
-
-  <div class="form-field">
-    <label for="firm">Firm / Organization</label>
-    <input type="text" id="firm" name="firm" placeholder="Your firm">
-  </div>
-
-  <div class="form-field">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="your@email.com" required>
-  </div>
-
-  <button type="submit" class="form-submit">
-    Download All Assets
-    <span class="material-symbols-outlined" style="font-size: 18px; color: #000101;">download</span>
-  </button>
-</form>
+</footer>
 
 <script>
 document.getElementById('asset-form').addEventListener('submit', async function(e) {
@@ -279,26 +311,6 @@ document.getElementById('asset-form').addEventListener('submit', async function(
   window.location.href = 'https://drive.google.com/drive/folders/1RMV3zhuLB22-ftHJ3xXBBut914qF2ztp?usp=sharing';
 });
 </script>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<!-- Footer -->
-<footer style="background-color: #f3f4f5; border-top: 1px solid #c5c6ca; margin-top: 120px;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 64px; max-width: 1440px; margin: 0 auto;">
-    <span class="label" style="color: #000101; font-weight: 700;">URBAN FUND</span>
-    <div style="display: flex; gap: 24px;">
-      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Sustainability</a>
-      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Reporting</a>
-      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Privacy</a>
-      <a href="#" class="label" style="color: #44474a; text-decoration: none;">Disclaimer</a>
-    </div>
-    <span style="font-size: 14px; color: #44474a; opacity: 0.6;">© 2026 URBAN FUND, ALL RIGHTS RESERVED.</span>
-  </div>
-</footer>
 
 </body>
 </html>
