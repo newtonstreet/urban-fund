@@ -4,58 +4,119 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Neighborhood Context — Urban Fund</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>
-  body { -webkit-font-smoothing: antialiased; font-family: 'DM Sans', sans-serif; background: #f8f9fa; color: #191c1d; }
-  .nav-link { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none; }
-  .nav-link.active { color: #000101; border-bottom: 2px solid #000101; padding-bottom: 4px; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { -webkit-font-smoothing: antialiased; font-family: 'DM Sans', sans-serif; background: #f8f9fa; color: #191c1d; margin: 0; }
   .label { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
   .tech-data { font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; }
-  .serif-lg { font-family: 'DM Serif Display', serif; }
-  .hairline { height: 1px; background: #c5c6ca; width: 100%; }
+  .serif { font-family: 'DM Serif Display', serif; }
+
+  /* NAV */
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 0 64px; height: 80px; max-width: 1440px; margin: 0 auto; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-link { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #44474a; text-decoration: none; }
+  .nav-link.active { color: #000101; border-bottom: 2px solid #000101; padding-bottom: 4px; }
+  .nav-cta { background: #000101; color: #ffffff; padding: 12px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+
+  /* SECTIONS */
+  .section-pad { padding: 120px 64px 0; max-width: 1440px; margin: 0 auto; }
+  .section-pad-both { padding: 120px 64px; max-width: 1440px; margin: 0 auto; }
+
+  /* GRIDS */
+  .hero-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 24px; }
+  .specs-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 24px; }
+  .map-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+  .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  /* FOOTER */
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 24px 64px; max-width: 1440px; margin: 0 auto; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* ════════════════════════════
+     MOBILE
+  ════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* Nav */
+    .nav-inner { padding: 0 20px; height: auto; flex-wrap: wrap; }
+    .nav-logo { font-size: 18px !important; padding: 16px 0 8px; }
+    .nav-links { gap: 16px; padding-bottom: 12px; order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 11px !important; white-space: nowrap; }
+    .nav-cta { display: none; }
+
+    /* Sections */
+    .section-pad { padding: 48px 20px 0; }
+    .section-pad-both { padding: 48px 20px; }
+
+    /* Grids → single column */
+    .hero-grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .map-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* Hero text */
+    .hero-title { font-size: 36px !important; }
+    .hero-body { padding-right: 0 !important; text-align: left !important; }
+    .hero-img { height: 280px !important; }
+
+    /* Specs table — allow horizontal scroll */
+    .specs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .specs-table { min-width: 480px; }
+
+    /* Map section */
+    .map-img { aspect-ratio: 4/3 !important; }
+    .proximity-card { padding: 20px !important; }
+
+    /* Notice */
+    .notice-box { padding: 20px !important; }
+
+    /* Footer */
+    .footer-inner { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    .footer-links { gap: 16px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- Nav -->
 <header style="background: #f8f9fa; position: fixed; top: 0; left: 0; right: 0; z-index: 50; border-bottom: 1px solid #c5c6ca;">
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 64px; height: 80px; max-width: 1440px; margin: 0 auto;">
-    <div class="serif-lg" style="font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; color: #000101;">URBAN FUND</div>
-    <nav style="display: flex; gap: 32px;">
+  <div class="nav-inner">
+    <div class="nav-logo serif" style="font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; color: #000101;">URBAN FUND</div>
+    <nav class="nav-links">
       <a href="overview.html" class="nav-link">Overview</a>
       <a href="context.html" class="nav-link active">Context</a>
       <a href="vision.html" class="nav-link">Vision</a>
       <a href="acquisition.html" class="nav-link">Acquisition</a>
     </nav>
-    <a href="acquisition.html" style="background-color: #000101; color: #ffffff; padding: 12px 24px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Contact Firm</a>
+    <a href="acquisition.html" class="nav-cta">Contact Firm</a>
   </div>
 </header>
 
 <main style="padding-top: 80px;">
 
   <!-- Hero Split -->
-  <section style="max-width: 1440px; margin: 0 auto; padding: 120px 64px 0;">
-    <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 24px;">
+  <section class="section-pad">
+    <div class="hero-grid">
       <div style="display: flex; flex-direction: column;">
         <span class="label" style="color: #775a19; margin-bottom: 16px;">Project Location &amp; Site</span>
-        <h1 class="serif-lg" style="font-size: 64px; line-height: 1.1; color: #000101; margin: 0 0 32px;">Neighborhood Context</h1>
-        <p style="font-size: 18px; line-height: 1.6; color: #44474a; margin: 0 0 48px; text-align: justify; padding-right: 48px;">Eastlake sits at the geographic midpoint between South Lake Union and the University District, two of Seattle's largest employment anchors, in a neighborhood that functions as a genuine residential community rather than a transit corridor. Minor Avenue East is the quieter, residential spine running parallel to the arterial — walkable, Lake Union-adjacent, and consistently in demand. 2033 is one of the last undeveloped multifamily sites on the block.</p>
+        <h1 class="hero-title serif" style="font-size: 64px; line-height: 1.1; color: #000101; margin: 0 0 32px;">Neighborhood Context</h1>
+        <p class="hero-body" style="font-size: 18px; line-height: 1.6; color: #44474a; margin: 0 0 48px; padding-right: 48px;">Eastlake sits at the geographic midpoint between South Lake Union and the University District, two of Seattle's largest employment anchors, in a neighborhood that functions as a genuine residential community rather than a transit corridor. Minor Avenue East is the quieter, residential spine running parallel to the arterial — walkable, Lake Union-adjacent, and consistently in demand. 2033 is one of the last undeveloped multifamily sites on the block.</p>
         <div style="border-top: 1px solid #c5c6ca; padding-top: 32px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+          <div class="stats-row">
             <div>
               <p class="label" style="color: #44474a; margin: 0 0 8px;">Site Area</p>
-              <p class="serif-lg" style="font-size: 24px; color: #000101; margin: 0;">7,449 SQ FT</p>
+              <p class="serif" style="font-size: 24px; color: #000101; margin: 0;">7,449 SQ FT</p>
             </div>
             <div>
               <p class="label" style="color: #44474a; margin: 0 0 8px;">Zoning Class</p>
-              <p class="serif-lg" style="font-size: 24px; color: #000101; margin: 0;">LR2/LR3 with MHA Overlay</p>
+              <p class="serif" style="font-size: 24px; color: #000101; margin: 0;">LR2/LR3 with MHA Overlay</p>
             </div>
           </div>
         </div>
       </div>
-      <div style="overflow: hidden; height: 512px;">
+      <div class="hero-img" style="overflow: hidden; height: 512px;">
         <img alt="Neighborhood property view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjwVzo52p4WwhXuxeX_OZDXr-G1VyPC54B1u_PE9Ym9ATojozL2Qx3AI3XOc2vVT3tT2y7xuiH0GQZu1AiEwzrrcJzqisT80dTWC5ct4BkdkegBSyhslRy0LkHfT5alyyG5osiZEl5J4PX4J56orj1zVDW5vOb4INUEVcYrGz5pTHj75K6xpG2WaznhWYzLcWVeb9b43fCzkeUULqXyFKQYSDI8WvyVkc1MA6tGouTADgbumUSz2gWML0fIWNSFDdVkRBEG_ZuYh8">
       </div>
@@ -63,15 +124,15 @@
   </section>
 
   <!-- Technical Specs -->
-  <section style="max-width: 1440px; margin: 0 auto; padding: 120px 64px 0;">
-    <div class="hairline" style="margin-bottom: 48px;"></div>
-    <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 24px;">
+  <section class="section-pad">
+    <div style="height: 1px; background: #c5c6ca; margin-bottom: 48px;"></div>
+    <div class="specs-grid">
       <div>
-        <h2 class="serif-lg" style="font-size: 32px; color: #000101; margin: 0 0 24px;">Existing Improvements</h2>
-        <p style="font-size: 16px; line-height: 1.6; color: #44474a; text-align: justify; padding-right: 48px;">The parcel contains a 2,464 sq ft wood-frame structure built in 1905, originally constructed as a private residence and subsequently converted to professional office use. The building currently operates as eight private therapist suites under annual leases. The landlord retains the right to terminate existing leases with six months' prior written notice. The existing structure is expected to be demolished as part of redevelopment. No representations are made regarding the condition of existing improvements beyond what is evidenced in the materials included with this offering.</p>
+        <h2 class="serif" style="font-size: 32px; color: #000101; margin: 0 0 24px;">Existing Improvements</h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #44474a; padding-right: 48px;">The parcel contains a 2,464 sq ft wood-frame structure built in 1905, originally constructed as a private residence and subsequently converted to professional office use. The building currently operates as eight private therapist suites under annual leases. The landlord retains the right to terminate existing leases with six months' prior written notice. The existing structure is expected to be demolished as part of redevelopment.</p>
       </div>
-      <div>
-        <table style="width: 100%; border-collapse: collapse;">
+      <div class="specs-table-wrap">
+        <table class="specs-table" style="width: 100%; border-collapse: collapse;">
           <thead>
             <tr style="border-bottom: 1px solid #75777a;">
               <th class="label" style="color: #75777a; padding: 16px 0; text-align: left;">Attribute</th>
@@ -81,29 +142,29 @@
           </thead>
           <tbody class="tech-data">
             <tr style="border-bottom: 1px solid #c5c6ca;">
-              <td style="padding: 24px 0; color: #191c1d;">Primary Parcel ID</td>
-              <td style="padding: 24px 0; text-align: center; color: #191c1d;">782-044-1192</td>
-              <td style="padding: 24px 0; text-align: right; color: #191c1d;">Verified</td>
+              <td style="padding: 20px 0; color: #191c1d;">Primary Parcel ID</td>
+              <td style="padding: 20px 0; text-align: center; color: #191c1d;">782-044-1192</td>
+              <td style="padding: 20px 0; text-align: right; color: #191c1d;">Verified</td>
             </tr>
             <tr style="border-bottom: 1px solid #c5c6ca;">
-              <td style="padding: 24px 0; color: #191c1d;">Existing Structure</td>
-              <td style="padding: 24px 0; text-align: center; color: #191c1d;">2,400 sq ft Commercial</td>
-              <td style="padding: 24px 0; text-align: right; color: #191c1d;">To be Razed</td>
+              <td style="padding: 20px 0; color: #191c1d;">Existing Structure</td>
+              <td style="padding: 20px 0; text-align: center; color: #191c1d;">2,400 sq ft Commercial</td>
+              <td style="padding: 20px 0; text-align: right; color: #191c1d;">To be Razed</td>
             </tr>
             <tr style="border-bottom: 1px solid #c5c6ca;">
-              <td style="padding: 24px 0; color: #191c1d;">Frontage Width</td>
-              <td style="padding: 24px 0; text-align: center; color: #191c1d;">75 Linear Feet</td>
-              <td style="padding: 24px 0; text-align: right; color: #191c1d;">Clear Title</td>
+              <td style="padding: 20px 0; color: #191c1d;">Frontage Width</td>
+              <td style="padding: 20px 0; text-align: center; color: #191c1d;">75 Linear Feet</td>
+              <td style="padding: 20px 0; text-align: right; color: #191c1d;">Clear Title</td>
             </tr>
             <tr style="border-bottom: 1px solid #c5c6ca;">
-              <td style="padding: 24px 0; color: #191c1d;">Walkability Score</td>
-              <td style="padding: 24px 0; text-align: center; color: #191c1d;">78 Very Walkable</td>
-              <td style="padding: 24px 0; text-align: right; color: #191c1d;">Tier 1</td>
+              <td style="padding: 20px 0; color: #191c1d;">Walkability Score</td>
+              <td style="padding: 20px 0; text-align: center; color: #191c1d;">78 Very Walkable</td>
+              <td style="padding: 20px 0; text-align: right; color: #191c1d;">Tier 1</td>
             </tr>
             <tr style="border-bottom: 1px solid #c5c6ca;">
-              <td style="padding: 24px 0; color: #191c1d;">Bike Score</td>
-              <td style="padding: 24px 0; text-align: center; color: #191c1d;">Bikeable</td>
-              <td style="padding: 24px 0; text-align: right; color: #191c1d;">N/S lanes on Eastlake Ave</td>
+              <td style="padding: 20px 0; color: #191c1d;">Bike Score</td>
+              <td style="padding: 20px 0; text-align: center; color: #191c1d;">Bikeable</td>
+              <td style="padding: 20px 0; text-align: right; color: #191c1d;">N/S lanes on Eastlake Ave</td>
             </tr>
           </tbody>
         </table>
@@ -112,55 +173,55 @@
   </section>
 
   <!-- Map Section -->
-  <section style="max-width: 1440px; margin: 0 auto; padding: 120px 64px;">
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
-      <div style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #e7e8e9;">
+  <section class="section-pad-both">
+    <div class="map-grid">
+      <div class="map-img" style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #e7e8e9;">
         <img alt="Aerial view of urban grid" style="width: 100%; height: 100%; object-fit: cover;"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvcGpXHZ_i34cL_3Nr2_seRNOblreqVmYE3OZ_pPEsz4g3L0DiVIcZpxH_MeQsm5M8y7DrkxPfKuvQkffLGBwuilEm9sb-G9LL0xdZlCMrtuAo3OPsX0nuvlAG_rrlsNMYG0daIoXyoxAyNs6T45lJ88_9cckji53ARKDj5WX5N-P__joz35CBGpty2WyAH4m61P40q9vCNTb5wqtusUjxKEpompy8_t7jBSGw4NC70RN4KtT-2-DLOIY1Kel9fcfSpfvSglYI46w">
       </div>
-      <div style="background: #f3f4f5; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #c5c6ca;">
+      <div class="proximity-card" style="background: #f3f4f5; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #c5c6ca;">
         <div>
-          <h3 class="serif-lg" style="font-size: 24px; color: #000101; margin: 0 0 24px;">Strategic Proximity</h3>
-          <div style="display: flex; flex-direction: column; gap: 24px;">
+          <h3 class="serif" style="font-size: 24px; color: #000101; margin: 0 0 24px;">Strategic Proximity</h3>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
             <div style="display: flex; align-items: flex-start; gap: 12px;">
-              <span class="material-symbols-outlined" style="color: #000101; font-size: 24px;">train</span>
+              <span class="material-symbols-outlined" style="color: #000101; font-size: 22px; flex-shrink: 0;">train</span>
               <div>
-                <p class="label" style="color: #000101; margin: 0 0 4px;">SLU Streetcar</p>
+                <p class="label" style="color: #000101; margin: 0 0 2px;">SLU Streetcar</p>
                 <p class="tech-data" style="color: #44474a; margin: 0;">0.7 miles — 14 min walk</p>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 12px;">
-              <span class="material-symbols-outlined" style="color: #000101; font-size: 24px;">local_mall</span>
+              <span class="material-symbols-outlined" style="color: #000101; font-size: 22px; flex-shrink: 0;">local_mall</span>
               <div>
-                <p class="label" style="color: #000101; margin: 0 0 4px;">Retail District</p>
+                <p class="label" style="color: #000101; margin: 0 0 2px;">Retail District</p>
                 <p class="tech-data" style="color: #44474a; margin: 0;">0.2 miles — 4 min walk</p>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 12px;">
-              <span class="material-symbols-outlined" style="color: #000101; font-size: 24px;">location_city</span>
+              <span class="material-symbols-outlined" style="color: #000101; font-size: 22px; flex-shrink: 0;">location_city</span>
               <div>
-                <p class="label" style="color: #000101; margin: 0 0 4px;">Downtown Seattle</p>
+                <p class="label" style="color: #000101; margin: 0 0 2px;">Downtown Seattle</p>
                 <p class="tech-data" style="color: #44474a; margin: 0;">1.8 miles — 8 min drive</p>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 12px;">
-              <span class="material-symbols-outlined" style="color: #000101; font-size: 24px;">directions_car</span>
+              <span class="material-symbols-outlined" style="color: #000101; font-size: 22px; flex-shrink: 0;">directions_car</span>
               <div>
-                <p class="label" style="color: #000101; margin: 0 0 4px;">I-5 On-Ramp</p>
+                <p class="label" style="color: #000101; margin: 0 0 2px;">I-5 On-Ramp</p>
                 <p class="tech-data" style="color: #44474a; margin: 0;">0.4 mi — 4 min drive</p>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 12px;">
-              <span class="material-symbols-outlined" style="color: #000101; font-size: 24px;">school</span>
+              <span class="material-symbols-outlined" style="color: #000101; font-size: 22px; flex-shrink: 0;">school</span>
               <div>
-                <p class="label" style="color: #000101; margin: 0 0 4px;">University of Washington</p>
+                <p class="label" style="color: #000101; margin: 0 0 2px;">University of Washington</p>
                 <p class="tech-data" style="color: #44474a; margin: 0;">1.4 miles — 7 min drive</p>
               </div>
             </div>
           </div>
         </div>
-        <a href="vision.html" style="display: inline-flex; align-items: center; gap: 8px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #000101; text-decoration: none; border-bottom: 1px solid #000101; padding-bottom: 4px; margin-top: 24px; text-transform: uppercase;">
-          VIEW DEVELOPMENT SCHEMES <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+        <a href="vision.html" style="display: inline-flex; align-items: center; gap: 8px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #000101; text-decoration: none; border-bottom: 1px solid #000101; padding-bottom: 4px; margin-top: 24px; text-transform: uppercase; align-self: flex-start;">
+          View Development Schemes <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
         </a>
       </div>
     </div>
@@ -168,9 +229,9 @@
 
   <!-- Important Notice -->
   <section style="max-width: 1440px; margin: 0 auto; padding: 0 64px 120px;">
-    <div style="background: #f3f4f5; border: 1px solid #c5c6ca; padding: 32px;">
-      <h4 class="label" style="color: #000101; margin: 0 0 16px; letter-spacing: 0.2em;">IMPORTANT NOTICE</h4>
-      <p style="font-size: 16px; line-height: 1.6; color: #191c1d; margin: 0; text-align: justify;">THE PROPERTY IS FULLY OCCUPIED AND OPERATING. PLEASE DO NOT CONTACT TENANTS OR VISIT THE PROPERTY WITHOUT PRIOR AUTHORIZATION. Tours and site visits will be coordinated by Seller at an appropriate stage of discussions.</p>
+    <div class="notice-box" style="background: #f3f4f5; border: 1px solid #c5c6ca; padding: 32px;">
+      <h4 class="label" style="color: #000101; margin: 0 0 16px; letter-spacing: 0.2em;">Important Notice</h4>
+      <p style="font-size: 16px; line-height: 1.6; color: #191c1d; margin: 0;">THE PROPERTY IS FULLY OCCUPIED AND OPERATING. PLEASE DO NOT CONTACT TENANTS OR VISIT THE PROPERTY WITHOUT PRIOR AUTHORIZATION. Tours and site visits will be coordinated by Seller at an appropriate stage of discussions.</p>
     </div>
   </section>
 
@@ -178,9 +239,9 @@
 
 <!-- Footer -->
 <footer style="background-color: #f3f4f5; border-top: 1px solid #c5c6ca;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 64px; max-width: 1440px; margin: 0 auto;">
+  <div class="footer-inner">
     <span class="label" style="color: #000101; font-weight: 700;">URBAN FUND</span>
-    <div style="display: flex; gap: 24px;">
+    <div class="footer-links">
       <a href="#" class="label" style="color: #44474a; text-decoration: none;">Sustainability</a>
       <a href="#" class="label" style="color: #44474a; text-decoration: none;">Reporting</a>
       <a href="#" class="label" style="color: #44474a; text-decoration: none;">Privacy</a>
